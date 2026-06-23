@@ -31,5 +31,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add meteo_daily_azul_real.csv
+          git add meteo_daily_PACOSTA_real.csv
           git diff --quiet && git diff --staged --quiet || (git commit -m "Actualización automática de datos meteorológicos" && git push)
