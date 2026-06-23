@@ -16,7 +16,7 @@ import base64
 # 1. PANTALLA DE CARGA
 # ---------------------------------------------------------
 if 'arranque_fase' not in st.session_state:
-    st.set_page_config(page_title="PREDWEEM AZUL INTEGRAL", layout="wide", page_icon="🌾")
+    st.set_page_config(page_title="PREDWEEM ACOSTA INTEGRAL", layout="wide", page_icon="🌾")
     st.markdown("<br><br><br>", unsafe_allow_html=True)
     st.info("🚜 **Iniciando Servidor PREDWEEM Azul...** Cargando motores dinámicos por evento real.")
     st.progress(20)
@@ -334,13 +334,13 @@ def optimizar_parametros_hidricos_2d(df_meteo, df_campo, modelo_ann, latitud_azu
 # ---------------------------------------------------------
 modelo_ann, cluster_model = load_models()
 
-st.title("🌾 PREDWEEM LOLIUM — AZUL (BA) lat=-36.8700 lon=-59.8900")
+st.title("🌾 PREDWEEM LOLIUM — PABLO ACOSTA (BA) lat=-37.132 lon=-59.789")
 
 with st.expander("📂 1. Datos del Lote", expanded=True):
     col_upload, col_rastrojo = st.columns(2)
     
     with col_upload:
-        archivo_meteo = st.file_uploader("1. Clima (Azul)", type=["xlsx", "csv"])
+        archivo_meteo = st.file_uploader("1. Clima (ACOSTA)", type=["xlsx", "csv"])
         archivo_campo = st.file_uploader("2. Campo (Validación Real Variable)", type=["xlsx", "csv"])
         
     with col_rastrojo:
@@ -348,7 +348,7 @@ with st.expander("📂 1. Datos del Lote", expanded=True):
             st.markdown("#### 🌾 Manejo de Superficie")
             cobertura_pct = st.slider(
                 "Cobertura de Rastrojo en Suelo (%)",
-                min_value=0, max_value=100, value=10, step=5,
+                min_value=0, max_value=100, value=80, step=5,
                 help="0% = Suelo desnudo / Labranza. 100% = Cobertura total (Ej. Cultivo de Servicio)."
             )
 
@@ -375,7 +375,7 @@ df_meteo_raw = load_data(archivo_meteo, "meteo_daily")
 df_campo_raw = load_data(archivo_campo, "azul_campo")
 
 # --- SIDEBAR ---
-st.sidebar.image("https://raw.githubusercontent.com/PREDWEEM/LOLIUM_AZUL2026/main/logo.png", use_container_width=True)
+st.sidebar.image("https://raw.githubusercontent.com/PREDWEEM/LOLIUM_PABLOACOSTA/main/logo.png", use_container_width=True)
 
 st.sidebar.markdown("## ⚙️ 2. Fisiología y Logística")
 umbral_er = st.sidebar.slider("Umbral Alerta Temprana", 0.001, 0.80, 0.001)
