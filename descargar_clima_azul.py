@@ -2,13 +2,13 @@
 import pandas as pd
 import requests
 
-# Coordenadas de Azul, provincia de Buenos Aires
-lat = -36.87
-lon = -59.89
+# Coordenadas de pablo acosta, provincia de Buenos Aires
+lat = -37.132
+lon = -59.789
 
 # Rango de fechas de tu archivo original
 start_date = "2026-01-01"
-end_date = "2026-04-14"
+end_date = "2026-06-23"
 
 # URL de la API de Open-Meteo para datos históricos diarios
 url = f"https://archive-api.open-meteo.com/v1/archive?latitude={lat}&longitude={lon}&start_date={start_date}&end_date={end_date}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=America%2FSao_Paulo"
