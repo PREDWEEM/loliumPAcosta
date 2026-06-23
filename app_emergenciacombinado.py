@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-# ===============================================================
-# 🌾 PREDWEEM INTEGRAL vK4.9.15 — LOLIUM AZUL 2026
-# Actualización y Rigor Científico:
-# - ADAPTACIÓN AZUL: Coordenadas fijas en -36.8700 para cálculo de ET0 Hargreaves.
-# - IDENTIDAD: PREDWEEM by GUILLERMO R. CHANTRE.
-# - LATENCIA INICIAL: Bloqueo estricto de emergencia los primeros 25 días del año.
-# - VALIDACIÓN DE FRECUENCIA VARIABLE: Incorporación del método de Integración 
-#   Dinámica por Intervalo Real (Event-to-Event), eliminando artefactos de interpolación.
-# - OPTIMIZADOR 2D BIO-FÍSICO: Barrido paramétrico sobre W_Max y Ke optimizado para ventanas reales.
-# - UX DINÁMICA: Sombreados de fondo del gráfico principal vinculados a las fechas de muestreo.
-# ===============================================================
+
 
 import streamlit as st
 import numpy as np
@@ -180,7 +170,7 @@ def load_data(file_uploader, default_name):
     elif (BASE / f"{default_name}.xlsx").exists():
         return pd.read_excel(BASE / f"{default_name}.xlsx")
     
-    github_url = f"https://raw.githubusercontent.com/PREDWEEM/LOLIUM_AZUL2026/main/{default_name}.csv"
+    github_url = f"https://raw.githubusercontent.com/PREDWEEM/LOLIUM_PACOSTA/main/{default_name}.csv"
     try:
         return pd.read_csv(github_url)
     except:
@@ -284,7 +274,7 @@ def calcular_metricas_validacion_integral(df_sync):
 # ---------------------------------------------------------
 # 4.5 MÓDULO OPTIMIZADOR 2D (SUELO - ENFOQUE CIENTÍFICO)
 # ---------------------------------------------------------
-def optimizar_parametros_hidricos_2d(df_meteo, df_campo, modelo_ann, latitud_azul=-36.8700):
+def optimizar_parametros_hidricos_2d(df_meteo, df_campo, modelo_ann, latitud_azul=-37.132):
     df = df_meteo.copy()
     df['Fecha'] = pd.to_datetime(df['Fecha'])
     df["Julian_days"] = df["Fecha"].dt.dayofyear
