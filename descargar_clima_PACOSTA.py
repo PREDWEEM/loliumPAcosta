@@ -21,7 +21,7 @@ if response.status_code == 200:
     daily = data['daily']
     
     # Construcción del DataFrame con las columnas idénticas a tu archivo
-    df_azul = pd.DataFrame({
+    df_PACOSTA = pd.DataFrame({
         'Fecha': daily['time'],
         'TMAX': daily['temperature_2m_max'],
         'TMIN': daily['temperature_2m_min'],
@@ -29,15 +29,15 @@ if response.status_code == 200:
     })
     
     # Rellenar posibles datos nulos (si la API tiene algún bache reciente) con 0 para lluvia o interpolando temperaturas
-    df_azul['Prec'] = df_azul['Prec'].fillna(0)
-    df_azul['TMAX'] = df_azul['TMAX'].interpolate()
-    df_azul['TMIN'] = df_azul['TMIN'].interpolate()
+    df_PACOSTA['Prec'] = df_PACOSTA['Prec'].fillna(0)
+    df_PACOSTA['TMAX'] = df_PACOSTA['TMAX'].interpolate()
+    df_PACOSTA['TMIN'] = df_PACOSTA['TMIN'].interpolate()
     
     # Exportar el archivo final
     nombre_archivo = 'meteo_daily_PACOSTA_real.csv'
-    df_azul.to_csv(nombre_archivo, index=False)
+    df_PACOSTA.to_csv(nombre_archivo, index=False)
     
     print(f"¡Archivo '{nombre_archivo}' generado con éxito!")
-    print(df_azul.head())
+    print(df_PACOSTA.head())
 else:
     print(f"Error al consultar la API. Código de estado: {response.status_code}")
