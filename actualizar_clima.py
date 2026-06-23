@@ -4,9 +4,9 @@ import pandas as pd
 import sys
 import os
 
-# Coordenadas específicas de AZUL, Provincia de Buenos Aires
-LAT = -36.87
-LON = -59.89
+# Coordenadas específicas de PABLO ACOSTA, Provincia de Buenos Aires
+LAT = -37.132
+LON = -59.789
 ARCHIVO_CSV = 'meteo_daily.csv'
 
 def actualizar_pronostico():
