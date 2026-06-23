@@ -1,4 +1,4 @@
-name: Actualizar Datos Meteorológicos Azul
+name: Actualizar Datos Meteorológicos PACOSTA
 
 # Cuándo se va a ejecutar esto:
 on:
@@ -25,7 +25,7 @@ jobs:
           pip install pandas requests
 
       - name: Ejecutar script de descarga
-        run: python descargar_clima_azul.py
+        run: python descargar_clima_PACOSTA.py
 
       - name: Hacer commit y push de los cambios
         run: |
