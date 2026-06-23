@@ -34,7 +34,7 @@ if response.status_code == 200:
     df_azul['TMIN'] = df_azul['TMIN'].interpolate()
     
     # Exportar el archivo final
-    nombre_archivo = 'meteo_daily_azul_real.csv'
+    nombre_archivo = 'meteo_daily_PACOSTA_real.csv'
     df_azul.to_csv(nombre_archivo, index=False)
     
     print(f"¡Archivo '{nombre_archivo}' generado con éxito!")
